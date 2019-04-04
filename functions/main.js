@@ -53,12 +53,32 @@ console.log(getPersonData({aaa: 0, bbb: 1}));
 console.log(getPersonData({aaa: 1, bbb: 1}));
 
 function getAverageScore(data) {
-  function getArrAverage(arr) {
+  let average;
+  let resultAverageScore = {};
+
+  for (let key in data) {
+   let value = data[key];
+   let count;
+   count++;
+   function getArrAverage(arr) {
     let arrAverageValue = 0;
-   for (let i = 0; i < arr.length; i++) {
+    let totalAverageValue;
+    for (let i = 0; i < arr.length; i++) {
       arrAverageValue = arr[i] + arrAverageValue;
-   }
-   return arrAverageValue / arr.length;
+      }
+      return arrAverageValue / arr.length;
   }
-  
+  resultAverageScore[key] = getArrAverage(value);
+
+  }
+   
+  return resultAverageScore;
 }
+
+console.log(getAverageScore({
+  algebra: [5,4,3],
+  geometry: [3,3,3],
+  russian: [4,2,3]
+}));
+
+//не знаю как посчитать итоговую отметку за все предметы
