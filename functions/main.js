@@ -52,6 +52,13 @@ console.log(getPersonData({aaa: 0, bbb: 0}));
 console.log(getPersonData({aaa: 0, bbb: 1}));
 console.log(getPersonData({aaa: 1, bbb: 1}));
 
-function getAverageScore( data ) {
+function getAverageScore(data) {
+  function getArrAverage(arr) {
+    let arrAverageValue = 0;
+   for (let i = 0; i < arr.length; i++) {
+      arrAverageValue = arr[i] + arrAverageValue;
+   }
+   return arrAverageValue / arr.length;
+  }
   
 }
