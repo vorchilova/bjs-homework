@@ -1,4 +1,4 @@
-use strict;
+"use strict";
 
 function calculateQuadraticEquation(){
     let a = +window.a.value;
@@ -13,17 +13,20 @@ function calculateQuadraticEquation(){
 function getResult(a,b,c){
     // код для задачи №1 писать здесь
     let discriminant;
-    let x, x1, x2;
-    discriminant = b * b - 4 * a * c;
+    let x = [];
+    let x1, x2;
+    discriminant = b*b - 4*a*c;
     if (discriminant < 0) {
         console.log("Корней нет");
+        return x;
     } else if (discriminant === 0) {
-        x = -b / 2 * a;
+        x1 = -b / 2 * a;
+        x[0] = x1;
         console.log(x);
         return x;
     } else if (discriminant > 0) {
-       x1 = (Math.pow(discriminant, 0.5) - b) / 2*a;
-       x2 = (-Math.pow(discriminant, 0.5) - b) / 2*a;
+       x1 = (Math.sqrt(discriminant) - b) / 2*a;
+       x2 = (-Math.sqrt(discriminant) - b) / 2*a;
        x = [x1, x2]
        console.log(x);
        return x;
@@ -40,13 +43,16 @@ function calculateDrinkTask(){
 
 function askDrink(name,dateOfBirthday){
     // код для задачи №2 писать здесь
+    let result;
+    let resultForOlder18, resultForUnder18;
+    let ageGuest;
     let today = new Date();
-    let todayYear = {};
-    let birthdayYear = {};
-    todayYear = today.getFullYear;
-    birthdayYear = dateOfBirthday.getFullYear;
-    todayYear - birthdayYear >= 18 ? result = "Не желаете ли олд-фэшн, " + name + " ?" : result = "Сожалею, " + name + " , но я не могу вам продать алкоголь. Зато могу предложить вам замечательный клюквенный компот!";
-    console.log(result)
+
+    ageGuest = today.getFullYear - dateOfBirthday.getFullYear;
+     console.log(ageGuest);
+    ageGuest >= 18 ? result = `Не желаете ли олд-фэшн, ${name} ?` : result = `Сожалею, ${name} , но я не могу вам продать алкоголь. Зато могу предложить вам замечательный клюквенный компот!`;
+    
+    console.log(result);
     return result;
 }
 
