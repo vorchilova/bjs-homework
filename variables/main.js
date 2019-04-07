@@ -16,17 +16,15 @@ let total;
 
 algebra = 5;
 geography = 4;
-physics =5;
+physics = 5;
 
 total = (algebra + geography + physics) / 3;
 console.log('Итог ' + total);
 
 //задача 3
 
-let name, message;
+let name;
 
 name = 'Alina';
 
-message = 'Привет, мир! Меня зовут ' + name;
-
-console.log(message);
+console.log(`Привет, мир! Меня зовут ${name}`);
