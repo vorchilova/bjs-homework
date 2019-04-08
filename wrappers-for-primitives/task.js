@@ -32,7 +32,7 @@ function calculateTotalMortgage(percent, contribution, amount, date) {
         p = percent / 12*100;
         totalAmount = sumPercent*(p+p/(((1+p)^months)-1));
     }
-    
+
     console.log(`Сумма платежа равна ${totalAmount.toFixed(2)}`);
     return totalAmount;
 }
@@ -46,5 +46,17 @@ function sayHello() {
 
 function getGreeting(name) {
     // код для задачи №2 писать здесь
-    //return greeting;
+    let greeting;
+    if (name === null) {
+        greeting = `Привет, мир! Меня зовут Аноним.`;
+    } else if (name === "") {
+        greeting = `Привет, мир! Меня зовут Аноним.`;
+    } else if (typeof name === 'undefined') {
+        greeting = `Привет, мир! Меня зовут Аноним.`;
+    } else if (name === " ") {
+        greeting = `Привет, мир! Меня зовут Аноним.`;
+    } else {
+        greeting = `Привет, мир! Меня зовут ${name}.`;
+    }
+    return greeting;
 }
