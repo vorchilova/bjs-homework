@@ -13,7 +13,8 @@ function calculateMortgage() {
 function calculateTotalMortgage(percent, contribution, amount, date) {
 
     // код для задачи №1 писать здесь
-    let totalAmount;
+    let totalAmount, sumPercent, p, months;
+    let today = new Date();
     percent = parseFloat(percent);
     contribution = parseFloat(contribution);
     amount = parseFloat(amount);
@@ -25,11 +26,14 @@ function calculateTotalMortgage(percent, contribution, amount, date) {
     } else if (Number.isNaN(amount)) {
         totalAmount = `Параметр сумма кредита содержит неправильное значение ${amount}`;
     } else {
-        
+        months = (date.getFullYear() - 1 - today.getFullYear())*12 + Math.abs(date.getMonths() - today.getMonths());
+        console.log(months);
+        sumPercent = amount - contribution;
+        p = percent / 12*100;
+        totalAmount = sumPercent*(p+p/(((1+p)^months)-1));
     }
-
-        
-
+    
+    console.log(`Сумма платежа равна ${totalAmount.toFixed(2)}`);
     return totalAmount;
 }
 
