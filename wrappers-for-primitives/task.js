@@ -1,3 +1,4 @@
+"use strict";
 function calculateMortgage() {
     let percent = window.percent.value;
     let contribution = window.contribution.value;
@@ -12,7 +13,24 @@ function calculateMortgage() {
 function calculateTotalMortgage(percent, contribution, amount, date) {
 
     // код для задачи №1 писать здесь
-    //return totalAmount;
+    let totalAmount;
+    percent = parseFloat(percent);
+    contribution = parseFloat(contribution);
+    amount = parseFloat(amount);
+
+    if (Number.isNaN(percent)) {
+        totalAmount = `Параметр процентная ставка содержит неправильное значение ${percent}`;
+    } else if (Number.isNaN(contribution)) {
+        totalAmount = `Параметр сумма первоначального взноса содержит неправильное значение ${contribution}`;
+    } else if (Number.isNaN(amount)) {
+        totalAmount = `Параметр сумма кредита содержит неправильное значение ${amount}`;
+    } else {
+        
+    }
+
+        
+
+    return totalAmount;
 }
 
 function sayHello() {
