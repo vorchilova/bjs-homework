@@ -48,7 +48,7 @@ function askDrink(name,dateOfBirthday){
     let ageGuest;
     let today = new Date();
 
-    ageGuest = today.getFullYear - dateOfBirthday.getFullYear;
+    ageGuest = today.getFullYear() - dateOfBirthday.getFullYear();
      console.log(ageGuest);
     ageGuest >= 18 ? result = `Не желаете ли олд-фэшн, ${name} ?` : result = `Сожалею, ${name} , но я не могу вам продать алкоголь. Зато могу предложить вам замечательный клюквенный компот!`;
     
@@ -64,21 +64,16 @@ function calculateAverageRating(){
 
 function getAverageMark(marks){
     // код для задачи №3 писать здесь
-    let sumMarks;
-    if (marks.length <= 5) {
-       for (let i = 0; i < marks.length; i++) {
+    let sumMarks = 0;
+    let averageMark;
+
+    if (marks.length > 5) {
+      console.log("оценок должно быть меньше 5");
+      marks = marks.splice(0,5);
+    }
+    for (let i = 0; i < marks.length; i++) {
         sumMarks = sumMarks + marks[i];
        }
-    } else {
-        console.log("оценок должно быть меньше 5");
-        let j = 0;
-        while (marks.length > 5) {
-            marks.pop();
-        }
-        for (let j = 0; j < marks.length; j++) {
-        sumMarks = sumMarks + marks[j];
-       }
-    }
     averageMark = sumMarks / marks.length;
     return averageMark;
 }
