@@ -1,3 +1,4 @@
+"use strict";
 function initCheckBirthday() {
     const birthday = document.getElementById('birthday').value;
 
@@ -8,6 +9,29 @@ function initCheckBirthday() {
 
 function checkBirthday(birthday) {
     // код для задачи №1 писать здесь
+    let now;
+    let dateUser;
+    let diff;
+    let age;
+
+    now = +new Date();
+    dateUser = +new Date(birthday);
+    diff = now - dateUser;
+    age = diff / 31536000000;
+    console.log(now + " " + dateUser + " " + diff + "age=" + age);
+
+    /*let result;
+    let resultForOlder18, resultForUnder18;
+    let ageGuest;
+    let today = new Date();
+
+    ageGuest = today.getFullYear() - dateOfBirthday.getFullYear();
+     console.log(ageGuest);
+    ageGuest >= 18 ? result = `Не желаете ли олд-фэшн, ${name} ?` : result = `Сожалею, ${name} , но я не могу вам продать алкоголь. Зато могу предложить вам замечательный клюквенный компот!`;
+    
+    console.log(result);
+    return result;*/
+
 }
 
 function initPrintAnimalSound() {
