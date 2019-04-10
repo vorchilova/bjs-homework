@@ -13,25 +13,17 @@ function checkBirthday(birthday) {
     let dateUser;
     let diff;
     let age;
+    let result;
 
     now = +new Date();
     dateUser = +new Date(birthday);
+
     diff = now - dateUser;
     age = diff / 31536000000;
-    console.log(now + " " + dateUser + " " + diff + "age=" + age);
-
-    /*let result;
-    let resultForOlder18, resultForUnder18;
-    let ageGuest;
-    let today = new Date();
-
-    ageGuest = today.getFullYear() - dateOfBirthday.getFullYear();
-     console.log(ageGuest);
-    ageGuest >= 18 ? result = `Не желаете ли олд-фэшн, ${name} ?` : result = `Сожалею, ${name} , но я не могу вам продать алкоголь. Зато могу предложить вам замечательный клюквенный компот!`;
+    age >= 18 ? result = `ДА` : result = `НЕТ`;
     
     console.log(result);
-    return result;*/
-
+    return result;
 }
 
 function initPrintAnimalSound() {
@@ -46,6 +38,16 @@ function initPrintAnimalSound() {
 
 function getAnimalSound(animal) {
     // код для задачи №2 писать здесь
+    function animalSound(sound) {
+        this.sound = sound;
+    }
+    animalSound.prototype = animal;
+    console.log(animal.sound);
+    if (animal = 'underfined') {
+        return result = 'null';
+    } else {
+        return result = animal.sound;
+    }
 }
 
 function initCalculateStatement() {
