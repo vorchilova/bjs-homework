@@ -14,22 +14,23 @@ function calculateTotalMortgage(percent, contribution, amount, date) {
 
     // код для задачи №1 писать здесь
     let totalAmount, sumPercent, p, months;
+    let newPercent, newContribution, newAmount, newDate;
     let today = new Date();
-    percent = parseFloat(percent);
-    contribution = parseFloat(contribution);
-    amount = parseFloat(amount);
+    newPercent = parseFloat(percent);
+    newContribution = parseFloat(contribution);
+    newAmount = parseFloat(amount);
 
-    if (Number.isNaN(percent)) {
+    if (Number.isNaN(newPercent)) {
         totalAmount = `Параметр процентная ставка содержит неправильное значение ${percent}`;
-    } else if (Number.isNaN(contribution)) {
+    } else if (Number.isNaN(newContribution)) {
         totalAmount = `Параметр сумма первоначального взноса содержит неправильное значение ${contribution}`;
-    } else if (Number.isNaN(amount)) {
+    } else if (Number.isNaN(newAmount)) {
         totalAmount = `Параметр сумма кредита содержит неправильное значение ${amount}`;
     } else {
         months = (date.getFullYear() - 1 - today.getFullYear())*12 + Math.abs(date.getMonths() - today.getMonths());
         console.log(months);
-        sumPercent = amount - contribution;
-        p = percent / 12*100;
+        sumPercent = newAmount - newContribution;
+        p = newPercent / 12*100;
         totalAmount = sumPercent*(p+p/(((1+p)^months)-1));
     }
 
@@ -47,15 +48,9 @@ function sayHello() {
 function getGreeting(name) {
     // код для задачи №2 писать здесь
     let greeting;
-    if (name === null) {
+    if ((name === null) || (name === "") || (typeof name === 'undefined') || (name === " ")){
         greeting = `Привет, мир! Меня зовут Аноним.`;
-    } else if (name === "") {
-        greeting = `Привет, мир! Меня зовут Аноним.`;
-    } else if (typeof name === 'undefined') {
-        greeting = `Привет, мир! Меня зовут Аноним.`;
-    } else if (name === " ") {
-        greeting = `Привет, мир! Меня зовут Аноним.`;
-    } else {
+     } else {
         greeting = `Привет, мир! Меня зовут ${name}.`;
     }
     return greeting;
