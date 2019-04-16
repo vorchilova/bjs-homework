@@ -38,16 +38,13 @@ function initPrintAnimalSound() {
 
 function getAnimalSound(animal) {
     // код для задачи №2 писать здесь
-    function animalSound(sound) {
-        this.sound = sound;
-    }
-    animalSound.prototype = animal;
-    console.log(animal.sound);
-    if (animal = 'underfined') {
-        return result = 'null';
-    } else {
-        return result = animal.sound;
-    }
+        const sound = animal.sound;
+        if (animal === 'underfined') {
+        return null;
+        } else {
+        return sound;
+        }
+
 }
 
 function initCalculateStatement() {
@@ -67,7 +64,7 @@ function getAverageMark(marks) {
     let roundedAverage;
 
     for (let i = 0; i < marks.length; i++) {   
-     sumMarks += new Number (marks[i]);
+     sumMarks += Number (marks[i]);
     }
 
     average = sumMarks / marks.length;
